@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+body{
+
+    background-image:linear-gradient(to top,#dd2476,#ff512f);
+    background-repeat: no-repeat;
+}
+
+.parent{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.message{
+    overflow: auto;
+    transform: scale(0);
+    border-radius: 8px 20px 10px 2px;
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    word-spacing: 2px;
+    font-size: 20px;
+    line-height: 1.8;
+    border-bottom: orangered solid 5px;
+}
+.message p:first-of-type{
+    text-align: start;
+}
+.message p:first-of-type::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-image: repeating-linear-gradient(to right,#dd2476,#ff512f);
+    border-radius: 20px;
+}
+.message p:last-of-type{
+    direction: rtl;
+    font-weight: 500;
+}
+p span:first-of-type{
+    font-weight: 400;
+    font-size: 14px;
+}
+p span:last-of-type{
+    font-weight: 600;
+    font-size: 20px;
+    color: #dd2476;
+}
+.message::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: -15px;
+    background-color: transparent;
+    border: 8px transparent solid;
+    border-right-color: white;
+    width: 0;
+    height: 0;
+}
+#caption{
+    text-align: center;
+
+    color: white;
+    font-size: 20px;
+}
+video{
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+button{
+    background-color: rgba(255, 255, 255, 0.911);
+    color: #dd2476;
+    border-radius: 20px;
+    padding: 12px;
+    border: none;
+    outline: none;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+button:focus +.message{
+    transition-duration: 1s;
+    transition-property: transform;
+    transform-origin: top center;
+    transform: scale(1);
+}
+svg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 400px;
+}
